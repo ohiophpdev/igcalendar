@@ -121,13 +121,10 @@ div#calendar ul.dates li.today{
 div#calendar ul.dates li.mask{
     background-color: #30314a;
 }
-div#calendar ul.dates li div.day-header{
+div#calendar ul.dates li div.day-container{
     padding-right:5px;
 }
-div#calendar ul.dates li div.event-container{
-    background-color: #0040fd;
-    color: rgb(255, 255, 255);
-}
+
 div#calendar ul.dates li div.event-title{
 
     text-align: center;

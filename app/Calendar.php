@@ -108,7 +108,7 @@ class Calendar
      * create the li element for ul
      */
     private function _showDay($cellNumber){
-
+        $event = null;
         if($this->currentDay==0){
 
             $firstDayOfTheWeek = date('N',strtotime($this->currentYear.'-'.$this->currentMonth.'-09'));
@@ -134,16 +134,19 @@ class Calendar
 
             $cellContent=null;
         }
-
+        foreach($this->eventsInMonth as $e)
+        {
+            if($e->date == $this->currentDate){
+                $event = $e->title;
+            }
+        }
 
 
         return '<li id="li-'.$this->currentDate.'" class="'.($cellNumber%7==1?' start ':($cellNumber%7==0?' end ':' '.($this->today==$this->currentDate?' today ':''))).
             ($cellContent==null?'mask':'').'">
                     <div class="day-container">
                     <div class="day-number">'.$cellContent.'</div>
-                    <div class="event-title">Zach IN</div>
-                    <div class="event-hours">9:00A to 3:00P</div>
-                    
+                    <div class="event-title">'.$event.'</div>
                     </div>
                 </li>';
     }

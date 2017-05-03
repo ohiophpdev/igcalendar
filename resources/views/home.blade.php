@@ -81,8 +81,8 @@
                         </div>
                     </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
+                    <button id="close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button id="confirm" type="button" class="btn btn-default" data-dismiss="modal">Confirm</button>
 
                 </div>
             </div>
@@ -92,9 +92,27 @@
 </div>
 
 <script>
-    $( "#calendar ul.dates li" ).click(function() {
+    $("#calendar ul.dates li" ).click(function() {
         $('#ptoModal').modal('show');
     });
+    $("#confirm" ).click(function() {
+    alert("confirm");
+    });
+    $("#close" ).click(function() {
+        $('#ptoModal').modal('hide');
+    });
+
+        $(function () {
+            $('#datetimepicker3').datetimepicker({
+                format: 'LT'
+            });
+        });
+    $(function () {
+        $('#datetimepicker4').datetimepicker({
+            format: 'LT'
+        });
+    });
+
 </script>
 
 @endsection
